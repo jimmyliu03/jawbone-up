@@ -1,12 +1,15 @@
 class DataProcessorController < ApplicationController
   def today
-  	if session[:token]
+  	if session[:token] && 
 	  	@token = session[:token]
 	  	client = Jawbone::Client.new @token
 	  	@goals_raw = client.goals
 		@moves_raw = client.moves
 		@sleep_raw = client.sleeps
-		@current_user = client.user["data"]["first"] + " " + client.user["data"]["last"] unless @current_user
+		@current_user = client.user["data"]["first"] + " " + client.user["data"]["last"] if @current_user.nil?
+		@moves_snapshot_url = "http://jawbone.com" + @moves_raw["data"]["items"].first["snapshot_image"]
+		@sleep_snapshot_url = "http://jawbone.com" + @sleep_raw["data"]["items"].first["snapshot_image"]
+
 		@current_steps = client.moves["data"]["items"].first["title"]
 		@goal_steps = @goals_raw["data"]["move_steps"]
 		@goal_steps_remaining = @goals_raw["data"]["remaining_for_day"]["move_steps_remaining"]

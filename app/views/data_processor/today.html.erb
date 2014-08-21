@@ -4,7 +4,9 @@
 <p>Current user: <%= @current_user %></p>
 <%= link_to 'Log Out', "/logout"%>
 <p>Current steps: You've taken <%= @current_steps %>. <%= @goal_steps_remaining%> steps to go!</p>
+<%= image_tag(@moves_snapshot_url, :alt => "Moves summary") %>
 <p>Last night, you slept <%= @current_sleep %>.</p>
+<%= image_tag(@sleep_snapshot_url, :alt => "Sleep summary") %>
 
 
 <h1>Raw Data</h1>
