@@ -1,0 +1,22 @@
+<h1>Today's Sleep & Move</h1>
+
+
+<p>Current user: <%= @current_user %></p>
+<%= link_to 'Log Out', "/logout"%>
+<p>Current steps: You've taken <%= @current_steps %>. <%= @goal_steps_remaining%> steps to go!</p>
+<p>Last night, you slept <%= @current_sleep %>.</p>
+
+
+<h1>Raw Data</h1>
+
+<h2>Goals</h2>
+<p>Goals Raw Data: <%= @goals_raw %></p>
+<h2>Movement</h2>
+
+<p>Movement Raw Data: <%= @moves_raw %></p>
+<h2>Sleep</h2>
+
+<p>Sleep Raw Data: <%= @sleep_raw %></p>
+
+
+
