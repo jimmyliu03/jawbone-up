@@ -1,0 +1,60 @@
+h1 {
+	text-align:center;
+}
+
+hero {
+	font-size:72px;
+}
+.navbar {
+	background-color:white;
+	border-bottom: 1px gray;
+}
+
+body {
+	margin-top: 80px;
+}
+
+.row.summary {
+	margin-top:50px;
+	margin-bottom:50px;
+}
+.square-box{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    
+
+}
+
+.sleep {
+    	  background: #6216C4;
+    }
+
+        .move {
+    	background: #EC8400;
+
+    }
+.square-box:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+.square-content{
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+}
+.square-content div {
+   display: table;
+   width: 100%;
+   height: 100%;
+}
+.square-content span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: white
+}

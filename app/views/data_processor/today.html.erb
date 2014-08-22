@@ -1,8 +1,23 @@
+<% provide(:username, @current_user)%>
 <h1>Today's Sleep & Move</h1>
 
+<div class="row summary">
+	<div class="col-md-2">
+	</div>
+	<div class="col-md-4">
+		<div class='square-box sleep'>
+    		<div class='square-content'><div><span><hero><%=@sleep_percent%></hero></span></div></div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class='square-box move'>
+    		<div class='square-content'><div><span><hero><%=@steps_percent%></hero></span></div></div>
+		</div>
 
-<p>Current user: <%= @current_user %></p>
-<%= link_to 'Log Out', "/logout"%>
+	</div>
+
+</div>
+
 <p>Current steps: You've taken <%= @current_steps %>. <%= @goal_steps_remaining%> steps to go!</p>
 <%= image_tag(@moves_snapshot_url, :alt => "Moves summary") %>
 <p>Last night, you slept <%= @current_sleep %>.</p>
